@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=utf-8">
+		<title>Species interaction network 2</title>
+		<script type="text/javascript" src="d3/d3.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+		<style type="text/css">
+
+
+
+		</style>
+	</head>
+
+	<body>
+		<div class="body">
+			<div class="content">
+
+
+				<div id="pop-up">
+					<div id="pop-up-title"></div>
+					<div id="pop-up-content">
+						<table> <tr>
+								<td><div id="pop-img"></div></td>
+								<td><div id="pop-desc"></div></td>
+						</tr> </table>
+					</div>
+				</div>
+				<div class='gallery' id='chart'> </div>
+				<style type="text/css">
+					circle.node {
+						stroke: #fff;
+						stroke-width: 1.5px;
+					}
+
+					line.link {
+						stroke: #999;
+						stroke-opacity: .6;
+					}
+					div#pop-up {
+						display: none;
+						position:absolute;
+						color: white;
+						font-size: 14px;
+						background: rgba(0,0,0,0.5);
+						padding: 5px 10px 5px 10px;
+						-moz-border-radius: 8px 8px;
+						border-radius: 8px 8px;
+					}
+					div#pop-up-title {
+						font-size: 15px;
+						width:200px;
+						margin-bottom: 4px;
+						font-weight: bolder;
+					}
+					div#pop-up-content {
+						font-size: 12px;
+					}
+					div#pop-desc {
+						width: 100px;
+					}
+					div#pop-img {
+						font-size: 30px;
+						font-weight: bolder;
+					}
+				</style>
+				<script src="force.js" type='text/javascript'> </script>
+</div>
+<script>
+	var observed = false;
+	$(function() {
+		$("#switchnode").change(function() {
+			v = $(this).val();
+			if (v == "cited")
+				go(true);
+			else
+				go(false);
+		});
+	});
+</script>
+<select id="switchnode">
+	<option value="all" selected>Show all nodes</option>
+	<option value="cited">Show only nodes with cited observations</option>
+</select>
+<br>
+</div>
+</body>
+</html>
